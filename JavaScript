@@ -1,0 +1,16 @@
+function rot13(str) { // LBH QVQ VG!
+ return str.split("").map(function(letters) {
+   var decode = letters.charCodeAt();
+    
+   if(decode >= 65 && decode <= 77) {
+      decode += 13;
+    }
+    else if(decode <= 90 && decode >= 78) {
+      decode -=13;
+    }
+    return String.fromCharCode(decode);
+  }).join("");
+}
+
+// Change the inputs below to test
+rot13("SERR PBQR PNZC");
